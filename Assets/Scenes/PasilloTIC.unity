@@ -3556,8 +3556,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1662621723}
-  m_Father: {fileID: 945077328}
-  m_RootOrder: 0
+  m_Father: {fileID: 1422988524}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &126928404
 MonoBehaviour:
@@ -16467,7 +16467,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 945077328}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &698473268
 MonoBehaviour:
@@ -19029,6 +19029,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Right Ray Interactor
+      objectReference: {fileID: 0}
+    - target: {fileID: 2746943775312856423, guid: 8f366d16f17b5cb44b3c8291c303e24f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f366d16f17b5cb44b3c8291c303e24f, type: 3}
@@ -22305,7 +22310,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 126928403}
   - {fileID: 698473267}
   m_Father: {fileID: 1422988524}
   m_RootOrder: 0
@@ -33653,6 +33657,7 @@ Transform:
   - {fileID: 2010946296}
   - {fileID: 263829356}
   - {fileID: 592642415}
+  - {fileID: 126928403}
   m_Father: {fileID: 1411544847}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -37285,6 +37290,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Left Ray Interactor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1520302139092541330, guid: 846b38a2263db094ca7cc6a7aff3bee4,
+        type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1520302139092541331, guid: 846b38a2263db094ca7cc6a7aff3bee4,
         type: 3}
