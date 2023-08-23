@@ -6,10 +6,8 @@ using System;
 
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI txtMissionDescript; 
     public TextMeshProUGUI txtInteractionResponse;
     public TextMeshProUGUI txtInstructions;
-    public GameObject panelText;
     public GameObject panelInteraction;
     public GameObject panelInstructions;
 
@@ -46,10 +44,6 @@ public class UIManager : MonoBehaviour
         panelInstructions.SetActive(false);
     }
     
-    public void ShowMissionDescription(string description)
-    {
-        txtMissionDescript.text = description;
-    }
 
     IEnumerator ShowMessageAndHideAfterSeconds(float seconds, GameObject panel)
     {

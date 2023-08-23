@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 242db676154763c4f9973d65a45b0be3, type: 3}
   m_Name: InteractableKeyData
   m_EditorClassIdentifier: 
-  instructions: Presione E para agarrar la llave
+  instructions: Agarrar la llave
   failedMessage: "No se pudo realizar la acci\xF3n"
   successMessage: Tienes la llave!

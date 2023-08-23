@@ -33,13 +33,9 @@ public class InteractionManager : MonoBehaviour
         }
     }
 
-    public void ActivateCurrentInteractable()
+    public void ActvateInteraction()
     {
-        if (currentInteractable)
-        {
-
-            currentInteractable.InteractionBehavior();
-            UIManager.Instance.HideInteraction();
-        }
+        currentInteractable.InteractionBehavior();
+        UIManager.Instance.HideInteraction();
     }
 }
