@@ -11,7 +11,8 @@ public class InteractableWithUIFunctional : MonoBehaviour
     [SerializeField] GameObject infoGO;
     [SerializeField] TextMeshProUGUI buttonText;
     [SerializeField] TextMeshProUGUI infoText;
-    [SerializeField] GameObject modelo;
+    [SerializeField] GameObject modeloCerrado;
+    [SerializeField] GameObject modeloAbierto;
     [SerializeField] Canvas canvas;
     GameObject go;
 
@@ -24,7 +25,7 @@ public class InteractableWithUIFunctional : MonoBehaviour
     {
         if (CheckForConditions())
         {
-            ShowInteractionInfo(data.successMessage);
+           //ShowInteractionInfo(data.successMessage);
             SuccessBehavior();
         }
         else
@@ -38,7 +39,8 @@ public class InteractableWithUIFunctional : MonoBehaviour
 
     private void SuccessBehavior()
     {
-        Destroy(modelo);
+        modeloCerrado.SetActive(false);
+        modeloAbierto.SetActive(true);
         go = gameObject;
         Invoke(nameof(DeactivateGO),3);
     }
