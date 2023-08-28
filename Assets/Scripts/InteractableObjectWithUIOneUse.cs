@@ -4,59 +4,34 @@ using UnityEngine;
 using TMPro;
 using System;
 
-public class InteractableWithUIFunctional : MonoBehaviour
+public class InteractableObjectWithUIOneUse : MonoBehaviour
 {
     public SOInteractableData data;
     [SerializeField] GameObject buttonGO;
     [SerializeField] GameObject infoGO;
     [SerializeField] TextMeshProUGUI buttonText;
     [SerializeField] TextMeshProUGUI infoText;
-    [SerializeField] GameObject modeloCerrado;
-    [SerializeField] GameObject modeloAbierto;
     [SerializeField] Canvas canvas;
-    [SerializeField] bool active;
-    GameObject go;
+    [SerializeField] bool used;
 
     private void Start()
     {
         canvas.worldCamera = Camera.main;
         HideInteraction();
-        active = true;
+        used = false;
     }
-    public void InteractionBehavior()
+    public virtual void InteractionBehavior()
     {
-        if (CheckForConditions())
-        {
-           //ShowInteractionInfo(data.successMessage);
-            SuccessBehavior();
-        }
-        else
-        {
-            ShowInteractionInfo(data.failedMessage);
-        }
+        ShowInteractionInfo(data.successMessage);
+        used = true;
         buttonGO.SetActive(false);
-        go = infoGO;
-        Invoke(nameof(DeactivateGO), 3);
     }
 
-    private void SuccessBehavior()
-    {
-        modeloCerrado.SetActive(false);
-        modeloAbierto.SetActive(true);
-        go = gameObject;
-        active = false;
-        Invoke(nameof(DeactivateGO),3);
-    }
-
-    private bool CheckForConditions()
-    {
-        return GameManager.Instance.hasKey;
-    }
-
-    private void ShowInteractionInfo(string failedMessage)
+    private void ShowInteractionInfo(string successMessage)
     {
         infoGO.SetActive(true);
-        infoText.text = failedMessage;
+        buttonGO.SetActive(false);
+        infoText.text = successMessage;
     }
 
     private void ShowInteractionButton(string instructions)
@@ -73,7 +48,7 @@ public class InteractableWithUIFunctional : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player")&& active)
+        if (other.gameObject.CompareTag("Player") && !used)
         {
             ShowInteractionButton(data.instructions);
         }
@@ -86,8 +61,4 @@ public class InteractableWithUIFunctional : MonoBehaviour
         }
     }
 
-    void DeactivateGO()
-    {
-        go.SetActive(false);
-    }
 }
